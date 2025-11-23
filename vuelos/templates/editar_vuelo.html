@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <h1>✏️ Editar Vuelo</h1>
+  <form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <a href="{% url 'lista_vuelos' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

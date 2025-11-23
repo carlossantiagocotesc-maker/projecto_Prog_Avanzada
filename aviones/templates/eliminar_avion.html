@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <h1 class="text-danger">🗑️ Eliminar Avión</h1>
+  <p>¿Seguro que deseas eliminar el avión <strong>{{ avion.avion_codigo }}</strong>?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'lista_aviones' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

@@ -13,11 +13,12 @@ class Vuelo(models.Model):
 
 class VueloXPasajeros(models.Model):
     pasa = models.ForeignKey(Pasajero, on_delete=models.CASCADE)
-    vuel = models.ForeignKey(Vuelo, on_delete=models.CASCADE)
+    # ✅ Se agrega related_name para acceso inverso desde Vuelo
+    vuel = models.ForeignKey(Vuelo, on_delete=models.CASCADE, related_name="vuelxpasajeros")
 
     def __str__(self):
         return f"{self.pasa} en {self.vuel}"
 
-class Meta:
-    verbose_name = "Vuelo x Pasajeros"
-    verbose_name_plural = "Vuelo x Pasajeros"
+    class Meta:
+        verbose_name = "Vuelo x Pasajeros"
+        verbose_name_plural = "Vuelos x Pasajeros"
